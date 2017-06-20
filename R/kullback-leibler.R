@@ -5,11 +5,12 @@
 #' @param X,Y input data
 #' @param k The number of nearest neighbors to search. 
 #' @references S. Boltz, E. Debreuve and M. Barlaud, "kNN-based high-dimensional Kullback-Leibler distance for tracking," Image Analysis for Multimedia Interactive Services, 2007. WIAMIS '07.
+#' @importFrom FNN knn.dist
+#' @export
 kl_dist <- function(X, Y, k = 10){
   kl_divergence(X, Y, k = k) + kl_divergence(Y, X, k = k)
 }
 
-#' @importFrom FNN knn.dist
 kl_divergence <- function(X, Y, k = 10){
   # convert to matrices
   X <- as.matrix(X)
@@ -29,7 +30,6 @@ kl_divergence <- function(X, Y, k = 10){
   log(nY / (nX-1)) + d * m_XY - d * m_X
 }
 
-#' @importFrom FNN knn.dist
 knn_entropy <- function(X, k = ceiling(sqrt(nrow(X)))){
   # convert to matrices
   X <- as.matrix(X)
@@ -44,7 +44,6 @@ knn_entropy <- function(X, k = ceiling(sqrt(nrow(X)))){
   log(v * n) - digamma(k) + d * m
 }
 
-#' @importFrom FNN knn.dist
 knn_crossentropy <- function(X, Y, k = ceiling(sqrt(nrow(Y)))){
   # convert to matrices
   X <- as.matrix(X)
