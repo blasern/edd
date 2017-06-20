@@ -3,8 +3,13 @@
 #' Compute Kullback-Leibler symmetric distance
 #' 
 #' @param X,Y input data
-#' @param k The number of nearest neighbors to search. 
+#' @param k The number of nearest neighbors to search
 #' @references S. Boltz, E. Debreuve and M. Barlaud, "kNN-based high-dimensional Kullback-Leibler distance for tracking," Image Analysis for Multimedia Interactive Services, 2007. WIAMIS '07.
+#' @examples 
+#' X <- rexp(80, rate = 0.2)
+#' Y <- rexp(120, rate = 0.4)
+#' kl_dist(X, Y, k = 5)
+#' FNN::KL.dist(X, Y, k = 5)[5] + log(120/79) + log(80/119)
 #' @importFrom FNN knn.dist
 #' @export
 kl_dist <- function(X, Y, k = 10){
