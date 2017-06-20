@@ -1,0 +1,18 @@
+Package: edd
+Title: Empirical Distribution Distance
+Version: 0.1
+Date: 2017-06-20
+Authors@R: c(person("Nello", "Blaser", email = "nello.blaser@uib.no", role = c("aut", "cre")))
+Description: An R package for calculating distances between empirical distribution functions.
+Depends:
+    R (>= 3.1.2)
+Imports:
+    methods,
+    Rcpp, 
+    FNN
+Suggests:
+    testthat
+LinkingTo: Rcpp
+License: GPL-3
+LazyData: true
+RoxygenNote: 6.0.1
