@@ -4,10 +4,12 @@
 \alias{wasserstein_dist}
 \title{Wasserstein Distance}
 \usage{
-wasserstein_dist(X, Y)
+wasserstein_dist(X, Y, p = 1)
 }
 \arguments{
 \item{X, Y}{input data}
+
+\item{p}{The power p of the pth Wasserstein distance}
 }
 \description{
 Compute Wasserstein distance
@@ -15,5 +17,9 @@ Compute Wasserstein distance
 \examples{
 X <- rexp(80, rate = 0.2)
 Y <- rexp(120, rate = 0.4)
+wasserstein_dist(X, Y)
+
+X <- matrix(X, ncol = 4)
+Y <- matrix(Y, ncol = 4)
 wasserstein_dist(X, Y)
 }
