@@ -7,12 +7,11 @@ Description: An R package for calculating distances between empirical distributi
 Depends:
     R (>= 3.1.2)
 Imports:
-    methods,
-    Rcpp, 
-    FNN
+    FNN,
+    transport,
+    rdist
 Suggests:
     testthat
-LinkingTo: Rcpp
 License: GPL-3
 LazyData: true
 RoxygenNote: 6.0.1
