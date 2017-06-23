@@ -11,20 +11,23 @@
 #' # cdist
 #' distribution_cdist(X, Y, method = "wasserstein")
 #' distribution_cdist(X, Y, method = "kl", k = 5)
+#' distribution_cdist(X, Y, method = "Lp", p = 2)
 #' distribution_cdist(X, Y, method = "hausdorff", metric = "euclidean")
 #' distribution_cdist(X, Y, method = "ky_fan", metric = "euclidean")
 #' 
 #' # pdist
 #' distribution_pdist(X, method = "wasserstein")
 #' distribution_pdist(X, method = "kl", k = 5)
+#' distribution_pdist(X, method = "Lp", p = 2)
 #' distribution_pdist(X, method = "hausdorff", metric = "euclidean")
 #' distribution_pdist(X, method = "ky_fan", metric = "euclidean")
 #' @export
-distribution_cdist <- function(X, Y, method = c("wasserstein", "kl", "hausdorff", "ky_fan"), ...){
+distribution_cdist <- function(X, Y, method = c("wasserstein", "kl", "Lp", "hausdorff", "ky_fan"), ...){
   method <- match.arg(method)
   distance_method <- switch(method, 
                             "wasserstein" = wasserstein_dist, 
                             "kl" = kl_dist, 
+                            "Lp" = Lp_dist,
                             "hausdorff" = hausdorff_dist, 
                             "ky_fan" = ky_fan_dist)
   dist_mat <- mapply(distance_method, 
@@ -36,7 +39,7 @@ distribution_cdist <- function(X, Y, method = c("wasserstein", "kl", "hausdorff"
 
 #' @rdname distribution_cdist
 #' @export
-distribution_pdist <- function(X, method = c("wasserstein", "kl", "hausdorff"), ...){
+distribution_pdist <- function(X, method = c("wasserstein", "kl", "Lp", "hausdorff", "ky_fan"), ...){
   distribution_cdist(X = X, Y = X, method = method, ...)
 }
 
