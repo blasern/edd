@@ -2,6 +2,7 @@
 
 This R package collects distance functions between empirical distributions. The purpose of the package is to provide a common framework for comparing empirical distributions and not to provide novel distance measures. It currently includes the following distance measures:
 - [Wasserstein distance](https://en.wikipedia.org/wiki/Wasserstein_metric)
+- [Kolmogorov distance](https://en.wikipedia.org/wiki/Kolmogorov%E2%80%93Smirnov_test)
 - [Hausdorff distance](https://en.wikipedia.org/wiki/Hausdorff_distance)
 - [Symmetric Kullback–Leibler distance](https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence)
 - [Lp distance](https://en.wikipedia.org/wiki/Lp_space)
