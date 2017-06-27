@@ -4,13 +4,16 @@ This R package collects distance functions between empirical distributions. The 
 - [Wasserstein distance](https://en.wikipedia.org/wiki/Wasserstein_metric)
 - [Hausdorff distance](https://en.wikipedia.org/wiki/Hausdorff_distance)
 - [Symmetric Kullback–Leibler distance](https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence)
+- [Lp distance](https://en.wikipedia.org/wiki/Lp_space)
+- [Moment distance](https://en.wikipedia.org/wiki/Method_of_moments_(probability_theory))
+- [Ky Fan distance](https://en.wikipedia.org/wiki/Convergence_of_random_variables#Properties_2)
 
 ## Installation 
 
 To install the latest development version from github:
 
     install.packages("devtools")
-    devtools::install_github("blasern/edd")
+    devtools::install_github("blasern/edd", auth_token = "842dbf09f9dc407cb73505eeeec8591ba0736e09")
 
 ## Development
  
