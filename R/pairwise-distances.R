@@ -12,6 +12,7 @@
 #' distribution_cdist(X, Y, method = "wasserstein")
 #' distribution_cdist(X, Y, method = "kl", k = 5)
 #' distribution_cdist(X, Y, method = "Lp", p = 2)
+#' distribution_cdist(X, Y, method = "moment", p = 1)
 #' distribution_cdist(X, Y, method = "hausdorff", metric = "euclidean")
 #' distribution_cdist(X, Y, method = "ky_fan", metric = "euclidean")
 #' 
@@ -19,15 +20,21 @@
 #' distribution_pdist(X, method = "wasserstein")
 #' distribution_pdist(X, method = "kl", k = 5)
 #' distribution_pdist(X, method = "Lp", p = 2)
+#' distribution_pdist(X, method = "moment", p = 1)
 #' distribution_pdist(X, method = "hausdorff", metric = "euclidean")
 #' distribution_pdist(X, method = "ky_fan", metric = "euclidean")
+#' @family empirical distribution distances
+#' @seealso \code{\link{wasserstein_dist}}, \code{\link{kl_dist}}, 
+#' \code{\link{Lp_dist}}, \code{\link{moment_dist}}, 
+#' \code{\link{hausdorff_dist}}, \code{\link{ky_fan_dist}}
 #' @export
-distribution_cdist <- function(X, Y, method = c("wasserstein", "kl", "Lp", "hausdorff", "ky_fan"), ...){
+distribution_cdist <- function(X, Y, method = c("wasserstein", "kl", "Lp", "moment", "hausdorff", "ky_fan"), ...){
   method <- match.arg(method)
   distance_method <- switch(method, 
                             "wasserstein" = wasserstein_dist, 
                             "kl" = kl_dist, 
                             "Lp" = Lp_dist,
+                            "moment" = moment_dist,
                             "hausdorff" = hausdorff_dist, 
                             "ky_fan" = ky_fan_dist)
   dist_mat <- mapply(distance_method, 
@@ -39,7 +46,7 @@ distribution_cdist <- function(X, Y, method = c("wasserstein", "kl", "Lp", "haus
 
 #' @rdname distribution_cdist
 #' @export
-distribution_pdist <- function(X, method = c("wasserstein", "kl", "Lp", "hausdorff", "ky_fan"), ...){
+distribution_pdist <- function(X, method = c("wasserstein", "kl", "Lp", "moment", "hausdorff", "ky_fan"), ...){
   distribution_cdist(X = X, Y = X, method = method, ...)
 }
 
