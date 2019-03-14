@@ -3,12 +3,16 @@
 \name{distribution_cdist}
 \alias{distribution_cdist}
 \alias{distribution_pdist}
+\alias{distribution_rdist}
 \title{Pairwise distances}
 \usage{
-distribution_cdist(X, Y, method = c("wasserstein", "kolmogorov", "kl", "Lp",
-  "moment", "hausdorff", "ky_fan"), ...)
+distribution_cdist(X, Y, method = c("wasserstein", "kolmogorov", "kl",
+  "Lp", "moment", "hausdorff", "ky_fan"), ...)
 
 distribution_pdist(X, method = c("wasserstein", "kolmogorov", "kl", "Lp",
+  "moment", "hausdorff", "ky_fan"), ...)
+
+distribution_rdist(X, method = c("wasserstein", "kolmogorov", "kl", "Lp",
   "moment", "hausdorff", "ky_fan"), ...)
 }
 \arguments{
@@ -41,9 +45,19 @@ distribution_pdist(X, method = "Lp", p = 2)
 distribution_pdist(X, method = "moment", p = 1)
 distribution_pdist(X, method = "hausdorff", metric = "euclidean")
 distribution_pdist(X, method = "ky_fan", metric = "euclidean")
+
+# rdist
+distribution_rdist(X, method = "wasserstein")
+distribution_rdist(X, method = "kolmogorov")
+distribution_rdist(X, method = "kl", k = 5)
+distribution_rdist(X, method = "Lp", p = 2)
+distribution_rdist(X, method = "moment", p = 1)
+distribution_rdist(X, method = "hausdorff", metric = "euclidean")
+distribution_rdist(X, method = "ky_fan", metric = "euclidean")
 }
 \seealso{
 \code{\link{wasserstein_dist}}, \code{\link{kl_dist}}, 
 \code{\link{Lp_dist}}, \code{\link{moment_dist}}, 
 \code{\link{hausdorff_dist}}, \code{\link{ky_fan_dist}}
 }
+\concept{empirical distribution distances}
