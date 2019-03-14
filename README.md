@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/blasern/edd.svg?branch=master)](https://travis-ci.org/blasern/edd)
+
 # edd - Empirical distribution distances
 
 This R package collects distance functions between empirical distributions. The purpose of the package is to provide a common framework for comparing empirical distributions and not to provide novel distance measures. It currently includes the following distance measures:
