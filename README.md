@@ -14,7 +14,7 @@ This R package collects distance functions between empirical distributions. The 
 To install the latest development version from github:
 
     install.packages("devtools")
-    devtools::install_github("blasern/edd", auth_token = "842dbf09f9dc407cb73505eeeec8591ba0736e09")
+    devtools::install_github("blasern/edd")
 
 ## Development
  
